@@ -608,7 +608,7 @@
   ],
   "components": [
     {
-      "key": "dawish-hero-0001",
+      "key": "2269b55b-ab0d-512c-ab3f-448983834575",
       "title": {
         "ar": "واجهة الدويش الرئيسية",
         "en": "Dawish Hero"
@@ -709,7 +709,7 @@
       ]
     },
     {
-      "key": "dawish-categories-0002",
+      "key": "a0ebb7a4-3d26-5dda-ad71-582d2229e93b",
       "title": {
         "ar": "أقسام الدويش",
         "en": "Dawish Categories"
@@ -744,7 +744,7 @@
       ]
     },
     {
-      "key": "dawish-products-0003",
+      "key": "06c991b6-4c00-5ed3-b5c4-ec754d6f72c1",
       "title": {
         "ar": "منتجات الدويش",
         "en": "Dawish Products"
@@ -868,7 +868,7 @@
       ]
     },
     {
-      "key": "dawish-features-0004",
+      "key": "0eb86b97-f0d1-5e9d-8a25-3ab5025dcca3",
       "title": {
         "ar": "مميزات الدويش",
         "en": "Dawish Features"
@@ -933,7 +933,7 @@
       ]
     },
     {
-      "key": "dawish-trust-strip-0005",
+      "key": "17853b63-ba10-50bb-949e-4c7c67adf9f3",
       "title": {
         "ar": "شريط الثقة الدويش",
         "en": "Dawish Trust Strip"
@@ -943,7 +943,7 @@
       "fields": []
     },
     {
-      "key": "dawish-promo-banners-0006",
+      "key": "7fa281e1-5012-5c12-be22-36807a11ea67",
       "title": {
         "ar": "بنرات الدويش التسويقية",
         "en": "Dawish Promo Banners"
@@ -1040,7 +1040,7 @@
       ]
     },
     {
-      "key": "dawish-story-0007",
+      "key": "1178d497-2d4f-54df-a8d8-c87aa9917673",
       "title": {
         "ar": "قصة الدويش",
         "en": "Dawish Story"
@@ -1095,7 +1095,7 @@
       ]
     },
     {
-      "key": "dawish-shop-by-need-0008",
+      "key": "19ff7b6f-ecff-5d5e-83fc-3c41cd9796f9",
       "title": {
         "ar": "تسوق حسب الاحتياج",
         "en": "Shop by Need"
@@ -1213,7 +1213,7 @@
       ]
     },
     {
-      "key": "dawish-bundles-0009",
+      "key": "e9030d32-c6ba-5e4e-921f-15dd7cbb612e",
       "title": {
         "ar": "باقات الدويش",
         "en": "Dawish Bundles"
@@ -1365,7 +1365,7 @@
       ]
     },
     {
-      "key": "dawish-testimonials-0010",
+      "key": "e98727b6-087b-52b3-a8bd-acb6c7e315a5",
       "title": {
         "ar": "آراء عملاء الدويش",
         "en": "Dawish Testimonials"
@@ -1464,7 +1464,7 @@
       ]
     },
     {
-      "key": "dawish-cta-0011",
+      "key": "78169f97-df62-50bd-959b-b0b3eb72c890",
       "title": {
         "ar": "دعوة شراء نهائية",
         "en": "Final CTA"
