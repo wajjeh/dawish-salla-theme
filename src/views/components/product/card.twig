@@ -1,0 +1,17 @@
+{# Optional custom product card skeleton if you register custom-salla-product-card in your build. #}
+<article class="dawish-product-card" id="product-{{ product.id }}">
+  <a href="{{ product.url }}" class="dawish-product-card__image">
+    {% if product.is_on_sale %}<span class="dawish-badge">خصم</span>{% endif %}
+    <img src="{{ product.image.url|default(product.image) }}" alt="{{ product.name }}" loading="lazy">
+  </a>
+  <div class="dawish-product-card__body">
+    <a href="{{ product.url }}" class="dawish-product-card__title">{{ product.name }}</a>
+    <div class="dawish-product-card__price">
+      <strong>{{ product.price }}</strong>
+      {% if product.regular_price %}<del>{{ product.regular_price }}</del>{% endif %}
+    </div>
+    <salla-add-product-button product-id="{{ product.id }}" product-status="{{ product.status }}" fill="outline" width="wide">
+      إضافة للسلة
+    </salla-add-product-button>
+  </div>
+</article>

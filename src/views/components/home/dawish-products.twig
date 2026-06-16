@@ -1,0 +1,25 @@
+{% set source = component.source|default('offers') %}
+{% set source_value = '' %}
+{% if source == 'selected' and component.products %}
+  {% set source_value = component.products|json_encode %}
+{% endif %}
+<section class="dawish-section dawish-products-block">
+  <div class="container">
+    <div class="dawish-section__head">
+      <div>
+        <h2>{{ component.title|default('منتجات مختارة') }}</h2>
+        {% if component.description %}<p>{{ component.description }}</p>{% endif %}
+      </div>
+      {% if component.display_all_url %}<a href="{{ component.display_all_url }}">عرض الكل</a>{% endif %}
+    </div>
+
+    <salla-products-slider
+      source="{{ source }}"
+      source-value='{{ source_value }}'
+      limit="{{ component.limit|default(8) }}"
+      block-title="{{ component.title|default('منتجات مختارة') }}"
+      display-all-url="{{ component.display_all_url|default('/offers') }}"
+      product-card-component="custom-salla-product-card">
+    </salla-products-slider>
+  </div>
+</section>

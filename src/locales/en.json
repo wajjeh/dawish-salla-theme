@@ -1,0 +1,11 @@
+{
+  "blocks": {
+    "header": {
+      "main_menu": "Main menu"
+    }
+  },
+  "dawish": {
+    "search_placeholder": "Search herbs, oils, coffee...",
+    "add_to_cart": "Add to cart"
+  }
+}
