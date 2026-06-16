@@ -57,3 +57,7 @@ salla theme preview --with-editor --browser=chrome
 - إضافة تحسينات عامة لصفحة إتمام الطلب، مع ملاحظة أن بعض عناصر Checkout تتحكم بها منصة سلة.
 
 بعد الرفع على GitHub، اختبر تحديد الحجم في صفحة المنتج، ثم إضافة المنتج للسلة، ثم ظهور الحجم داخل السلة وإتمام الطلب.
+
+## Homepage Visible Fix
+
+This build makes the home page visible immediately by rendering the Dawish launch sections directly from `src/views/pages/index.twig`. It prevents the Salla preview from showing a blank home page before adding homepage blocks manually.
