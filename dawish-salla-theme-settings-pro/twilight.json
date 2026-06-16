@@ -1,0 +1,744 @@
+{
+  "name": {
+    "ar": "ثيم الدويش الطبيعي",
+    "en": "Dawish Herbal Theme"
+  },
+  "repository": "https://github.com/your-account/dawish-salla-theme",
+  "author_email": "support@example.com",
+  "support_url": "https://salla.com/",
+  "description": {
+    "ar": "ثيم خاص بعطارة الدويش بتصميم أبيض فاخر، شاشة تحميل بالشعار، بحث واضح، حساب وسلة وتجربة شراء مهيأة للجوال.",
+    "en": "A custom herbal-store theme with a premium white interface, logo preloader, clear search, account/cart actions, and mobile-first shopping UX."
+  },
+  "features": [
+    "mega-menu",
+    "fonts",
+    "color",
+    "breadcrumb",
+    "unite-cards-height",
+    "component-featured-products",
+    "component-fixed-banner",
+    "component-fixed-products",
+    "component-products-slider",
+    "component-photos-slider",
+    "component-square-photos",
+    "component-store-features",
+    "menu-images",
+    "filters"
+  ],
+  "settings": [
+    {
+      "type": "static",
+      "id": "static-line0",
+      "format": "line",
+      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center; padding: 15px; margin-bottom: 20px !important; flex-direction: column; gap: 15px;'><h6 style='color: #ffffff; font-size: 15px; font-weight: bold;'>إعدادات ثيم الدويش</h6></div>"
+    },
+    {
+      "type": "string",
+      "id": "dawish_primary_color",
+      "label": "لون الثيم الأساسي",
+      "format": "color",
+      "value": "#68744c"
+    },
+    {
+      "type": "string",
+      "id": "dawish_accent_color",
+      "label": "لون اللمسة الذهبية",
+      "format": "color",
+      "value": "#c2a15a"
+    },
+    {
+      "type": "string",
+      "id": "dawish_background_color",
+      "label": "لون الخلفية العام",
+      "format": "color",
+      "value": "#fffaf1"
+    },
+    {
+      "type": "string",
+      "icon": "sicon-bell-ring",
+      "label": "نص الشريط العلوي",
+      "id": "dawish_topbar_text",
+      "format": "text",
+      "value": {
+        "ar": "منتجات طبيعية مختارة بعناية — دفع آمن — توصيل سريع",
+        "en": "Carefully selected natural products — secure payment — fast delivery"
+      },
+      "multilanguage": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-spinner",
+      "label": "تفعيل شاشة التحميل بشعار المتجر",
+      "id": "dawish_loader_enabled",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "number",
+      "icon": "sicon-timer",
+      "label": "أقصى مدة لشاشة التحميل بالمللي ثانية",
+      "id": "dawish_loader_timeout",
+      "format": "integer",
+      "value": 2500,
+      "minimum": 700,
+      "maximum": 4000
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-search",
+      "label": "تفعيل نافذة البحث الكبيرة",
+      "id": "dawish_search_overlay_enabled",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "static",
+      "id": "static-line-images",
+      "format": "line",
+      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center; padding: 15px; margin-bottom: 20px !important; flex-direction: column; gap: 15px;'><h6 style='color: #ffffff; font-size: 15px; font-weight: bold;'>خيارات الصور والقوائم</h6></div>"
+    },
+    {
+      "type": "items",
+      "icon": "sicon-keyboard_arrow_down",
+      "label": "طريقة عرض الصور في قسم قائمة عناصر",
+      "id": "squar_photo_bg_image_size",
+      "format": "dropdown-list",
+      "source": "Manual",
+      "options": [
+        {
+          "label": "تغطية الصورة كامل المساحة مع المحافظة على أبعاد الصورة (Cover)",
+          "value": "cover",
+          "key": "cover"
+        },
+        {
+          "label": "إظهار الصورة كاملة في المنتصف (Contain)",
+          "value": "contain",
+          "key": "contain"
+        }
+      ],
+      "multichoice": false,
+      "searchable": false,
+      "selected": [
+        {
+          "label": "إظهار الصورة كاملة في المنتصف (Contain)",
+          "value": "contain",
+          "key": "contain"
+        }
+      ],
+      "value": "contain",
+      "info": "يحدد طريقة عرض صور الأقسام والبنرات المربعة."
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "عرض المنتجات الثابتة بشكل عمودي",
+      "id": "vertical_fixed_products",
+      "format": "switch",
+      "value": false,
+      "selected": false
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار زر المزيد في أقسام المنتجات",
+      "id": "is_more_button_enabled",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "static",
+      "id": "static-line1",
+      "format": "line",
+      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center; padding: 15px; margin-bottom: 20px !important; flex-direction: column; gap: 15px;'><h6 style='color: #ffffff; font-size: 15px; font-weight: bold;'>خيارات أعلى الصفحة</h6></div>"
+    },
+    {
+      "type": "static",
+      "id": "static-label2",
+      "format": "title",
+      "value": "خيارات أعلى الصفحة",
+      "variant": "h6"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تثبيت الهيدر عند التمرير",
+      "id": "header_is_sticky",
+      "format": "switch",
+      "value": true,
+      "selected": true,
+      "info": "يُنصح بإلغاء تفعيلها في حالة وجود عناصر كثيرة في القائمة المنسدلة"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "استخدام خلفية داكنة للهيدر العلوي",
+      "id": "topnav_is_dark",
+      "format": "switch",
+      "value": false,
+      "selected": false,
+      "info": "مفيد للثيمات الداكنة أو صفحات الهبوط."
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار الروابط المهمة أعلى الصفحة",
+      "id": "important_links",
+      "format": "switch",
+      "value": true,
+      "selected": true,
+      "info": "مثل صفحة الهبوط، المدونة، والصفحات التعريفية."
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تجميع الروابط الإضافية داخل قائمة المزيد",
+      "id": "enable_more_menu",
+      "format": "switch",
+      "value": true,
+      "selected": true,
+      "info": "عند تفعيلها، ستظهر الروابط الإضافية في قائمة منسدلة عند عدم وجود مساحة كافية."
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-search",
+      "label": "إظهار شريط البحث في الجوال",
+      "id": "show_mobile_search",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-heart",
+      "label": "إظهار المفضلة في الهيدر",
+      "id": "show_wishlist_in_header",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "static",
+      "id": "static-line3",
+      "format": "line",
+      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center; padding: 15px; margin-bottom: 20px !important; flex-direction: column; gap: 15px;'><h6 style='color: #ffffff; font-size: 15px; font-weight: bold;'>خيارات أسفل الصفحة</h6></div>"
+    },
+    {
+      "type": "static",
+      "id": "static-label4",
+      "format": "title",
+      "value": "خيارات أسفل الصفحة",
+      "variant": "h6"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "استخدام فوتر داكن",
+      "id": "footer_is_dark",
+      "format": "switch",
+      "value": false,
+      "selected": false
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار شعار المتجر في الفوتر",
+      "id": "show_footer_logo",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار روابط التواصل في الفوتر",
+      "id": "show_footer_social",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار بيانات التواصل في الفوتر",
+      "id": "show_footer_contact",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "static",
+      "id": "static-line5",
+      "format": "line",
+      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center; padding: 15px; margin-bottom: 20px !important; flex-direction: column; gap: 15px;'><h6 style='color: #ffffff; font-size: 15px; font-weight: bold;'>خيارات صفحة المنتج</h6></div>"
+    },
+    {
+      "type": "static",
+      "id": "static-label6",
+      "format": "title",
+      "value": "خيارات صفحة المنتج",
+      "variant": "h6"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار مسار التنقل في صفحة المنتج",
+      "id": "product_show_breadcrumbs",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار مسار التنقل في صفحة المنتجات",
+      "id": "product_index_show_breadcrumbs",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تفعيل إشعار الإضافة للسلة",
+      "id": "enable_add_product_toast",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار زر إشعار التوفر عند نفاد المنتج",
+      "id": "notify_when_available_in_card",
+      "format": "switch",
+      "value": true,
+      "selected": true,
+      "info": "يظهر زر إشعار التوفر في بطاقات المنتجات التي نفدت كميتها."
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تثبيت زر الإضافة أسفل شاشة الجوال",
+      "id": "sticky_add_to_cart",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار وسوم المنتج",
+      "id": "show_tags",
+      "format": "switch",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "items",
+      "icon": "sicon-keyboard_arrow_down",
+      "label": "طريقة عرض صور سلايدر المنتج",
+      "id": "slider_background_size",
+      "format": "dropdown-list",
+      "source": "Manual",
+      "options": [
+        {
+          "label": "تغطية الصورة كامل المساحة مع المحافظة على أبعاد الصورة (Cover)",
+          "value": "cover",
+          "key": "cover"
+        },
+        {
+          "label": "إظهار الصورة كاملة في المنتصف (Contain)",
+          "value": "contain",
+          "key": "contain"
+        }
+      ],
+      "multichoice": false,
+      "searchable": false,
+      "selected": [
+        {
+          "label": "إظهار الصورة كاملة في المنتصف (Contain)",
+          "value": "contain",
+          "key": "contain"
+        }
+      ],
+      "value": "contain"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تفعيل تكبير صور المنتج",
+      "id": "imageZoom",
+      "format": "switch",
+      "value": true,
+      "selected": true,
+      "info": "هذه الخاصية تمكنك من تكبير الصورة لتسهيل رؤية المزيد من التفاصيل بها."
+    },
+    {
+      "type": "static",
+      "id": "static-line-advanced",
+      "format": "line",
+      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center; padding: 15px; margin-bottom: 20px !important; flex-direction: column; gap: 15px;'><h6 style='color: #ffffff; font-size: 15px; font-weight: bold;'>خيارات متقدمة</h6></div>"
+    },
+    {
+      "type": "string",
+      "icon": "sicon-search",
+      "label": "نص البحث المؤقت",
+      "id": "dawish_search_placeholder",
+      "format": "text",
+      "value": {
+        "ar": "ابحث عن أعشاب، زيوت، قهوة، شاي، عناية...",
+        "en": "Search herbs, oils, coffee, tea, care..."
+      },
+      "multilanguage": true
+    },
+    {
+      "type": "string",
+      "icon": "sicon-format-text-alt",
+      "label": "عبارة صغيرة في الواجهة",
+      "id": "dawish_hero_badge",
+      "format": "text",
+      "value": {
+        "ar": "اختيارات طبيعية من الدويش",
+        "en": "Natural picks from Dawish"
+      },
+      "multilanguage": true
+    },
+    {
+      "type": "string",
+      "id": "placeholder",
+      "format": "hidden",
+      "value": "images/placeholder.png"
+    }
+  ],
+  "components": [
+    {
+      "key": "dawish-hero-0001",
+      "title": {
+        "ar": "واجهة الدويش الرئيسية",
+        "en": "Dawish Hero"
+      },
+      "icon": "sicon-store2",
+      "path": "home.dawish-hero",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "multilanguage": true,
+          "value": {
+            "ar": "عطارة الدويش",
+            "en": "Dawish Herbal Store"
+          },
+          "required": false
+        },
+        {
+          "type": "string",
+          "icon": "sicon-typography",
+          "label": "الوصف",
+          "id": "description",
+          "format": "textarea",
+          "multilanguage": true,
+          "value": {
+            "ar": "أعشاب، زيوت، قهوة ومنتجات عناية مختارة بعناية.",
+            "en": "Herbs, oils, coffee and care products carefully selected."
+          },
+          "required": false
+        },
+        {
+          "type": "items",
+          "icon": "sicon-link",
+          "label": "رابط زر تسوق الآن",
+          "id": "primary_url",
+          "format": "variable-list",
+          "source": "custom",
+          "sources": [
+            {
+              "label": "التخفيضات",
+              "key": "offers_link",
+              "value": "offers_link"
+            },
+            {
+              "label": "تصنيف",
+              "key": "categories",
+              "value": "categories"
+            },
+            {
+              "label": "رابط خارجي",
+              "key": "custom",
+              "value": "custom"
+            }
+          ],
+          "required": false
+        },
+        {
+          "type": "items",
+          "icon": "sicon-link",
+          "label": "رابط زر العروض",
+          "id": "secondary_url",
+          "format": "variable-list",
+          "source": "custom",
+          "sources": [
+            {
+              "label": "التخفيضات",
+              "key": "offers_link",
+              "value": "offers_link"
+            },
+            {
+              "label": "تصنيف",
+              "key": "categories",
+              "value": "categories"
+            },
+            {
+              "label": "رابط خارجي",
+              "key": "custom",
+              "value": "custom"
+            }
+          ],
+          "required": false
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "label": "صورة اختيارية للواجهة",
+          "id": "image",
+          "format": "image",
+          "required": false,
+          "settings": {
+            "width": 900,
+            "height": 720
+          }
+        }
+      ]
+    },
+    {
+      "key": "dawish-categories-0002",
+      "title": {
+        "ar": "أقسام الدويش",
+        "en": "Dawish Categories"
+      },
+      "icon": "sicon-layout-grid-rearrange",
+      "path": "home.dawish-categories",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "multilanguage": true,
+          "value": {
+            "ar": "الأقسام",
+            "en": "Categories"
+          },
+          "required": false
+        },
+        {
+          "type": "items",
+          "icon": "sicon-keyboard_arrow_down",
+          "label": "حدد التصنيفات",
+          "id": "categories",
+          "format": "dropdown-list",
+          "source": "categories",
+          "multichoice": true,
+          "searchable": true,
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "dawish-products-0003",
+      "title": {
+        "ar": "منتجات الدويش",
+        "en": "Dawish Products"
+      },
+      "icon": "sicon-products",
+      "path": "home.dawish-products",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "multilanguage": true,
+          "value": {
+            "ar": "منتجات مختارة",
+            "en": "Featured Products"
+          },
+          "required": false
+        },
+        {
+          "type": "string",
+          "icon": "sicon-typography",
+          "label": "وصف قصير",
+          "id": "description",
+          "format": "textarea",
+          "multilanguage": true,
+          "value": {
+            "ar": "اختياراتنا بعناية من عطارة الدويش.",
+            "en": "Carefully selected picks from Dawish."
+          },
+          "required": false
+        },
+        {
+          "type": "items",
+          "icon": "sicon-keyboard_arrow_down",
+          "label": "مصدر المنتجات",
+          "id": "source",
+          "format": "dropdown-list",
+          "selected": [
+            {
+              "label": "العروض",
+              "value": "offers",
+              "key": "offers"
+            }
+          ],
+          "options": [
+            {
+              "label": "العروض",
+              "value": "offers",
+              "key": "offers"
+            },
+            {
+              "label": "أحدث المنتجات",
+              "value": "latest",
+              "key": "latest"
+            },
+            {
+              "label": "منتجات محددة",
+              "value": "selected",
+              "key": "selected"
+            }
+          ],
+          "source": "Manual",
+          "required": true
+        },
+        {
+          "type": "items",
+          "icon": "sicon-products",
+          "label": "منتجات محددة",
+          "id": "products",
+          "format": "dropdown-list",
+          "source": "products",
+          "multichoice": true,
+          "searchable": true,
+          "required": false,
+          "conditions": [
+            {
+              "id": "source",
+              "operation": "=",
+              "value": "selected"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "icon": "sicon-list",
+          "label": "عدد المنتجات",
+          "id": "limit",
+          "format": "integer",
+          "minimum": 4,
+          "maximum": 24,
+          "value": 8
+        },
+        {
+          "type": "items",
+          "icon": "sicon-link",
+          "label": "رابط عرض الكل",
+          "id": "display_all_url",
+          "format": "variable-list",
+          "source": "custom",
+          "sources": [
+            {
+              "label": "التخفيضات",
+              "key": "offers_link",
+              "value": "offers_link"
+            },
+            {
+              "label": "تصنيف",
+              "key": "categories",
+              "value": "categories"
+            },
+            {
+              "label": "رابط خارجي",
+              "key": "custom",
+              "value": "custom"
+            }
+          ],
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "dawish-features-0004",
+      "title": {
+        "ar": "مميزات الدويش",
+        "en": "Dawish Features"
+      },
+      "icon": "sicon-award-ribbon",
+      "path": "home.dawish-features",
+      "fields": [
+        {
+          "type": "collection",
+          "id": "items",
+          "format": "collection",
+          "label": "المميزات",
+          "item_label": "ميزة",
+          "minLength": 2,
+          "maxLength": 6,
+          "value": [
+            {
+              "items.icon": "sicon-leaf",
+              "items.title": "منتجات طبيعية",
+              "items.text": "اختيارات موثوقة بعناية"
+            },
+            {
+              "items.icon": "sicon-shipping-fast",
+              "items.title": "توصيل سريع",
+              "items.text": "تجربة شراء سهلة"
+            },
+            {
+              "items.icon": "sicon-shield-check",
+              "items.title": "دفع آمن",
+              "items.text": "وسائل دفع موثوقة"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-star",
+              "id": "items.icon",
+              "label": "الأيقونة",
+              "format": "icon",
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "id": "items.title",
+              "label": "العنوان",
+              "format": "text",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-typography",
+              "id": "items.text",
+              "label": "النص",
+              "format": "textarea",
+              "multilanguage": true,
+              "required": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

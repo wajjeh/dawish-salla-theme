@@ -1,0 +1,11 @@
+<section class="dawish-section dawish-features">
+  <div class="container dawish-features__grid">
+    {% for item in component.items %}
+      <div class="dawish-feature-card">
+        <i class="{{ item.icon|default('sicon-leaf') }}"></i>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

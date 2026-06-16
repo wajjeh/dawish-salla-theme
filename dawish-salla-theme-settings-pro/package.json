@@ -1,0 +1,25 @@
+{
+  "name": "dawish-salla-theme",
+  "version": "1.0.0",
+  "description": "Custom Salla Twilight theme for Dawish herbal store.",
+  "private": true,
+  "scripts": {
+    "preview": "salla theme preview",
+    "preview:editor": "salla theme preview --with-editor",
+    "login": "salla login"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "fslightbox": "^3.7.3",
+    "lite-youtube-embed": "^0.2.0",
+    "mmenu-light": "^3.0.9",
+    "sweetalert2": "^11.26.17"
+  },
+  "devDependencies": {
+    "@salla.sa/twilight": "^2.14.363",
+    "@salla.sa/twilight-components": "^2.14.363",
+    "@salla.sa/twilight-tailwind-theme": "^2.14.363",
+    "tailwindcss": "^3.4.19",
+    "webpack": "^5.103.0"
+  }
+}
