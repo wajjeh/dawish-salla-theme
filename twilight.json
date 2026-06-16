@@ -1,0 +1,733 @@
+{
+  "name": {
+    "ar": "ثيم الدويش الطبيعي",
+    "en": "Dawish Natural Theme"
+  },
+  "repository": "https://github.com/wajjeh/dawish-salla-theme",
+  "author_email": "alal1143@icloud.com",
+  "features": [
+    "mega-menu",
+    "fonts",
+    "color",
+    "breadcrumb",
+    "unite-cards-height",
+    "component-featured-products",
+    "component-fixed-banner",
+    "component-fixed-products",
+    "component-products-slider",
+    "component-photos-slider",
+    "component-square-photos",
+    "component-store-features",
+    "menu-images",
+    "filters"
+  ],
+  "settings": [
+    {
+      "type": "static",
+      "format": "title",
+      "id": "dawish_settings_title",
+      "value": "###### إعدادات ثيم الدويش",
+      "variant": "h6"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-spinner",
+      "label": "تفعيل شاشة التحميل بشعار المتجر",
+      "id": "dawish_loader_enabled",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-search",
+      "label": "تفعيل نافذة البحث الكبيرة",
+      "id": "dawish_search_overlay_enabled",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-mobile",
+      "label": "تفعيل شريط التنقل السفلي في الجوال",
+      "id": "dawish_bottom_nav_enabled",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-whatsapp",
+      "label": "تفعيل زر الواتساب العائم",
+      "id": "dawish_whatsapp_enabled",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "string",
+      "icon": "sicon-whatsapp",
+      "label": "رقم واتساب بدون +",
+      "id": "dawish_whatsapp_number",
+      "format": "text",
+      "value": "966562089988",
+      "required": false
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "dawish_line_header"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "dawish_header_title",
+      "value": "###### خيارات أعلى الصفحة",
+      "variant": "h6"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تثبيت القائمة الرئيسية أعلى الصفحة عند التمرير",
+      "id": "header_is_sticky",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "شريط علوي داكن",
+      "id": "topnav_is_dark",
+      "format": "switch",
+      "required": false,
+      "value": false,
+      "selected": false
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
+      "id": "important_links",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تفعيل قائمة المزيد في القائمة الرئيسية",
+      "id": "enable_more_menu",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "dawish_line_footer"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "dawish_footer_title",
+      "value": "###### خيارات أسفل الصفحة",
+      "variant": "h6"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "الوضع الداكن للفوتر",
+      "id": "footer_is_dark",
+      "format": "switch",
+      "required": false,
+      "value": false,
+      "selected": false
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "dawish_line_product"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "dawish_product_title",
+      "value": "###### خيارات صفحة المنتج",
+      "variant": "h6"
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار مسار التنقل في صفحة المنتج",
+      "id": "product_show_breadcrumbs",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار مسار التنقل في صفحة قائمة المنتجات",
+      "id": "product_index_show_breadcrumbs",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تفعيل إشعار الإضافة للسلة المحسن",
+      "id": "enable_add_product_toast",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار زر أعلمني عند التوفر في بطاقة المنتج",
+      "id": "notify_when_available_in_card",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تثبيت زر الإضافة والكمية أسفل شاشة الجوال",
+      "id": "sticky_add_to_cart",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "إظهار الوسوم",
+      "id": "show_tags",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تكبير صور المنتج",
+      "id": "imageZoom",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    }
+  ],
+  "components": [
+    {
+      "key": "ead828f4-f1eb-4595-98a6-1bb24a7973d9",
+      "title": {
+        "ar": "واجهة الدويش الرئيسية",
+        "en": "Dawish Hero"
+      },
+      "icon": "sicon-store2",
+      "path": "home.dawish-hero",
+      "image": "https://cdn.salla.network/images/themes/raed/preview-images/images-slider-enhancement.png?v=1.1",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-typography",
+          "label": "الوصف",
+          "id": "description",
+          "format": "textarea",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 255
+        },
+        {
+          "type": "string",
+          "icon": "sicon-link",
+          "label": "رابط زر تسوق الآن",
+          "id": "primary_url",
+          "format": "url",
+          "required": false,
+          "value": "/categories"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-link",
+          "label": "رابط زر العروض",
+          "id": "secondary_url",
+          "format": "url",
+          "required": false,
+          "value": "/offers"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "label": "صورة اختيارية للواجهة",
+          "id": "image",
+          "format": "image",
+          "required": false,
+          "description": "المقاس المقترح 900×720 بكسل",
+          "settings": {
+            "width": 900,
+            "height": 720
+          }
+        }
+      ]
+    },
+    {
+      "key": "a75513cc-c7ab-4a48-9abf-c5be6edd3286",
+      "title": {
+        "ar": "أقسام الدويش",
+        "en": "Dawish Categories"
+      },
+      "icon": "sicon-layout-grid-rearrange",
+      "path": "home.dawish-categories",
+      "image": "https://cdn.salla.network/images/themes/raed/main-links-with-bg.jpg?v=1.1",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "type": "items",
+          "icon": "sicon-keyboard_arrow_down",
+          "label": "حدد التصنيفات",
+          "id": "categories",
+          "format": "dropdown-list",
+          "selected": [],
+          "options": [],
+          "source": "categories",
+          "multichoice": true,
+          "searchable": true,
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "3ac47a92-b1f0-4b46-86e3-2014ee2874ba",
+      "title": {
+        "ar": "منتجات الدويش",
+        "en": "Dawish Products"
+      },
+      "icon": "sicon-products",
+      "path": "home.dawish-products",
+      "image": "https://cdn.salla.network/images/themes/raed/preview-images/slider-products-with-bg.png?v=1.1",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-typography",
+          "label": "وصف قصير",
+          "id": "description",
+          "format": "textarea",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 255
+        },
+        {
+          "type": "items",
+          "icon": "sicon-keyboard_arrow_down",
+          "label": "مصدر المنتجات",
+          "id": "source",
+          "format": "dropdown-list",
+          "selected": [
+            {
+              "label": "العروض",
+              "value": "offers",
+              "key": "145fef9e-aace-49d8-83f7-8335a2b333f9"
+            }
+          ],
+          "options": [
+            {
+              "label": "العروض",
+              "value": "offers",
+              "key": "145fef9e-aace-49d8-83f7-8335a2b333f9"
+            },
+            {
+              "label": "أحدث المنتجات",
+              "value": "latest",
+              "key": "72dd8b9e-7fa6-474c-9ecf-da88e43947f9"
+            },
+            {
+              "label": "منتجات محددة",
+              "value": "selected",
+              "key": "ee697551-65e7-454f-a0ef-f47402fa0fb7"
+            }
+          ],
+          "source": "Manual",
+          "required": true
+        },
+        {
+          "type": "items",
+          "icon": "sicon-products",
+          "label": "منتجات محددة",
+          "id": "products",
+          "format": "dropdown-list",
+          "selected": [],
+          "options": [],
+          "source": "products",
+          "multichoice": true,
+          "searchable": true,
+          "required": false,
+          "conditions": [
+            {
+              "id": "source",
+              "operation": "=",
+              "value": "selected"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "icon": "sicon-list",
+          "label": "عدد المنتجات",
+          "id": "limit",
+          "format": "integer",
+          "minimum": 4,
+          "maximum": 24,
+          "value": 8,
+          "required": false
+        },
+        {
+          "type": "string",
+          "icon": "sicon-link",
+          "label": "رابط عرض الكل",
+          "id": "display_all_url",
+          "format": "url",
+          "required": false,
+          "value": "/offers"
+        }
+      ]
+    },
+    {
+      "key": "b24d4266-017a-4948-b7ca-a59279e18ce4",
+      "title": {
+        "ar": "مميزات الدويش",
+        "en": "Dawish Features"
+      },
+      "icon": "sicon-award-ribbon",
+      "path": "home.dawish-features",
+      "image": "https://cdn.salla.network/images/themes/raed/preview-images/custom-testimonials.png?v=1.1",
+      "fields": [
+        {
+          "type": "collection",
+          "id": "items",
+          "key": "d2970b6f-db39-4469-bae9-a1edbb33c7d2",
+          "format": "collection",
+          "label": "المميزات",
+          "item_label": "ميزة",
+          "minLength": 2,
+          "maxLength": 6,
+          "required": false,
+          "value": [
+            {
+              "items.icon": "sicon-leaf",
+              "items.title": "منتجات مختارة",
+              "items.text": "اختيارات موثوقة بعناية"
+            },
+            {
+              "items.icon": "sicon-shipping-fast",
+              "items.title": "توصيل سريع",
+              "items.text": "تجربة شراء سهلة"
+            },
+            {
+              "items.icon": "sicon-shield-check",
+              "items.title": "دفع آمن",
+              "items.text": "وسائل دفع موثوقة"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-star",
+              "id": "items.icon",
+              "key": "2eb35f6d-7bf7-4d13-b149-b28c42a2c603",
+              "label": "الأيقونة",
+              "format": "icon",
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "id": "items.title",
+              "key": "0415233b-0d46-4472-9016-6db3a8874b1e",
+              "label": "العنوان",
+              "format": "text",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-typography",
+              "id": "items.text",
+              "key": "d834c326-85cb-4f0b-812e-84ec336aa301",
+              "label": "النص",
+              "format": "textarea",
+              "multilanguage": true,
+              "required": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "17922159-a2cc-405a-b8f3-64e6c77b4cde",
+      "title": {
+        "ar": "باقات الدويش",
+        "en": "Dawish Bundles"
+      },
+      "icon": "sicon-gift",
+      "path": "home.dawish-bundles",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-typography",
+          "label": "الوصف",
+          "id": "description",
+          "format": "textarea",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 255
+        },
+        {
+          "type": "string",
+          "icon": "sicon-link",
+          "label": "رابط عرض الكل",
+          "id": "display_all_url",
+          "format": "url",
+          "required": false,
+          "value": "/offers"
+        },
+        {
+          "type": "collection",
+          "id": "items",
+          "key": "84e2e921-d266-4cde-bf5d-ef3253e5320d",
+          "format": "collection",
+          "label": "الباقات",
+          "item_label": "باقة",
+          "minLength": 1,
+          "maxLength": 6,
+          "required": false,
+          "value": [
+            {
+              "items.badge": "الأكثر طلبًا",
+              "items.icon": "sicon-coffee",
+              "items.title": "باقة القهوة والشاي",
+              "items.text": "اختيارات مناسبة للجلسات اليومية.",
+              "items.button": "استعرض الباقة",
+              "items.url": "/search?q=قهوة"
+            },
+            {
+              "items.badge": "عناية",
+              "items.icon": "sicon-drop",
+              "items.title": "باقة الزيوت المختارة",
+              "items.text": "منتجات عناية مرتبة في مكان واحد.",
+              "items.button": "استعرض الزيوت",
+              "items.url": "/search?q=زيوت"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-star",
+              "id": "items.badge",
+              "key": "95ce3470-f889-4f5c-bb57-7ccaa5a8134c",
+              "label": "شارة الباقة",
+              "format": "text",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-star",
+              "id": "items.icon",
+              "key": "9862c95b-5403-403f-86e1-482a152a9477",
+              "label": "الأيقونة",
+              "format": "icon",
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "id": "items.title",
+              "key": "0ca77cf3-9045-4df8-a15f-1ff08410dfe6",
+              "label": "العنوان",
+              "format": "text",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-typography",
+              "id": "items.text",
+              "key": "d28d8eb0-5d91-4d1d-bbc6-f7d882911985",
+              "label": "النص",
+              "format": "textarea",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-button",
+              "id": "items.button",
+              "key": "abe62fff-f3ab-48f9-b2b7-d766f37aaa99",
+              "label": "نص الزر",
+              "format": "text",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-link",
+              "id": "items.url",
+              "key": "9dcdfb4f-889a-4dbc-9dfe-e417a394b0f2",
+              "label": "الرابط",
+              "format": "url",
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-image",
+              "id": "items.image",
+              "key": "0908b49b-2f98-4421-99e9-ee805b9a13f0",
+              "label": "صورة اختيارية",
+              "format": "image",
+              "required": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1b5a34d1-daf9-435f-8c6e-de023b5edd5c",
+      "title": {
+        "ar": "آراء عملاء الدويش",
+        "en": "Dawish Testimonials"
+      },
+      "icon": "sicon-chat-bubbles",
+      "path": "home.dawish-testimonials",
+      "fields": [
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان",
+          "id": "title",
+          "format": "text",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "type": "collection",
+          "id": "items",
+          "key": "49806ed7-68bc-44f4-998f-f38263fbf47e",
+          "format": "collection",
+          "label": "الآراء",
+          "item_label": "رأي",
+          "minLength": 1,
+          "maxLength": 8,
+          "required": false,
+          "value": [
+            {
+              "items.name": "عميل الدويش",
+              "items.meta": "طلب إلكتروني",
+              "items.text": "تجربة مرتبة والمنتجات وصلت بتغليف جميل."
+            },
+            {
+              "items.name": "عميلة الدويش",
+              "items.meta": "منتجات عناية",
+              "items.text": "البحث واضح والطلب كان سريع وسهل."
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-user",
+              "id": "items.name",
+              "key": "8d27e386-0cbb-450d-afa6-f302d6680fc1",
+              "label": "الاسم",
+              "format": "text",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-tag",
+              "id": "items.meta",
+              "key": "46251c50-65cc-4d88-bd8d-ef0c238b9c20",
+              "label": "وصف قصير",
+              "format": "text",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "type": "string",
+              "icon": "sicon-typography",
+              "id": "items.text",
+              "key": "2e242739-3d1b-4a45-b855-566116305eae",
+              "label": "نص الرأي",
+              "format": "textarea",
+              "multilanguage": true,
+              "required": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "support_url": "https://salla.com/",
+  "description": {
+    "ar": "ثيم مخصص لعطارة الدويش مع واجهة وجوال وصفحة منتج محسنة.",
+    "en": "A custom Salla Twilight theme for Dawish with improved mobile and product pages."
+  }
+}

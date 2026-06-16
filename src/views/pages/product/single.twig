@@ -1,0 +1,106 @@
+{% extends "layouts.master" %}
+{% block content %}
+<section class="container dawish-page dawish-product-page" id="product-{{ product.id }}">
+  {% if theme.settings.get('product_show_breadcrumbs', true) %}<salla-breadcrumb></salla-breadcrumb>{% endif %}
+
+  <div class="dawish-product-single">
+    <div class="dawish-product-single__gallery image-size-{{ theme.settings.get('slider_background_size', 'contain') }} {{ theme.settings.get('imageZoom', true) ? 'has-image-zoom' : '' }}">
+      <salla-slider type="thumbs">
+        {% for image in product.images %}
+          <img src="{{ image.url|default(image) }}" alt="{{ product.name }}">
+        {% endfor %}
+      </salla-slider>
+    </div>
+
+    <div class="dawish-product-single__info">
+      <h1>{{ product.name }}</h1>
+      <salla-reviews-summary product-id="{{ product.id }}"></salla-reviews-summary>
+      <div class="dawish-product-single__price" data-dawish-product-price>{{ product.price }}</div>
+      {% if product.subtitle %}<p class="dawish-product-subtitle">{{ product.subtitle }}</p>{% endif %}
+
+      <div class="dawish-product-mini-trust" aria-label="مزايا الشراء">
+        <span><i class="sicon-check-circle"></i> متوفر</span>
+        <span><i class="sicon-shipping-fast"></i> شحن سريع</span>
+        <span><i class="sicon-shield-check"></i> دفع آمن</span>
+      </div>
+
+      <div class="dawish-option-shell" data-dawish-option-shell>
+        <div class="dawish-option-shell__head">
+          <div>
+            <span>اختيار المنتج</span>
+            <h2>اختر الحجم المناسب</h2>
+          </div>
+          <small>السعر يتغير حسب اختيارك</small>
+        </div>
+        <salla-product-options product-id="{{ product.id }}"></salla-product-options>
+        <div class="dawish-selected-option-note" data-dawish-selected-option-note>
+          <i class="sicon-check-circle"></i> اختر الحجم لإظهار الاختيار قبل الإضافة للسلة
+        </div>
+      </div>
+
+      <div class="dawish-product-single__actions">
+        <salla-add-product-button product-id="{{ product.id }}" product-status="{{ product.status }}" fill="solid" width="wide">إضافة للسلة</salla-add-product-button>
+        <salla-quick-buy product-id="{{ product.id }}"></salla-quick-buy>
+      </div>
+
+      <div class="dawish-product-trust">
+        <div><i class="sicon-shipping-fast"></i><span>{{ theme.settings.get('dawish_shipping_text', 'توصيل سريع') }}</span></div>
+        <div><i class="sicon-shield-check"></i><span>{{ theme.settings.get('dawish_payment_text', 'دفع آمن') }}</span></div>
+        <div><i class="sicon-phone"></i><span>{{ theme.settings.get('dawish_support_text', 'دعم ومساعدة') }}</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dawish-product-tabs">
+    <h2>تفاصيل المنتج</h2>
+    <div class="content-entry">{{ product.description|raw }}</div>
+    {% if theme.settings.get('show_tags', true) and product.tags %}
+      <div class="dawish-product-tags">
+        {% for tag in product.tags %}<span>{{ tag.name|default(tag) }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if theme.settings.get('dawish_product_usage_enabled', true) %}
+  <div class="dawish-product-usage">
+    <h2>معلومات تساعدك قبل الشراء</h2>
+    <div class="dawish-product-usage__grid">
+      <div><i class="sicon-leaf"></i><h3>طريقة الاستخدام</h3><p>اتبع تعليمات الاستخدام المكتوبة في وصف المنتج أو على العبوة.</p></div>
+      <div><i class="sicon-box"></i><h3>الحفظ والتخزين</h3><p>يُحفظ في مكان جاف وبارد وبعيد عن أشعة الشمس المباشرة.</p></div>
+      <div><i class="sicon-shield-check"></i><h3>تنبيه عام</h3><p>راجع المكونات قبل الاستخدام وتجنب المنتج عند وجود حساسية من أحد مكوناته.</p></div>
+    </div>
+    <div class="dawish-safety-note">
+      تنبيه: معلومات المنتج للتعريف والمساعدة على الاختيار، ولا تُعد نصيحة طبية أو بديلًا عن استشارة المختص عند الحاجة.
+    </div>
+  </div>
+  {% endif %}
+
+  {% if theme.settings.get('dawish_cross_sell_enabled', true) %}
+  <section class="dawish-section dawish-product-cross-sell">
+    <div class="dawish-section__head">
+      <div>
+        <span class="dawish-eyebrow">أكمل اختيارك</span>
+        <h2>منتجات تكمل هذا المنتج</h2>
+      </div>
+    </div>
+    <salla-products-slider source="latest" limit="8" product-card-component="custom-salla-product-card"></salla-products-slider>
+  </section>
+  {% endif %}
+
+  <section class="dawish-section">
+    <h2>منتجات مشابهة</h2>
+    <salla-products-slider source="related" source-value="{{ product.id }}" limit="8" product-card-component="custom-salla-product-card"></salla-products-slider>
+  </section>
+</section>
+
+{% if theme.settings.get('sticky_add_to_cart', true) %}
+<div class="dawish-sticky-buy-mobile">
+  <div class="dawish-sticky-summary">
+    <strong>{{ product.name }}</strong>
+    <span>{{ product.price }}</span>
+    <small data-dawish-sticky-option>اختر الحجم ثم أضف للسلة</small>
+  </div>
+  <salla-add-product-button product-id="{{ product.id }}" product-status="{{ product.status }}" fill="solid" width="wide">إضافة للسلة</salla-add-product-button>
+</div>
+{% endif %}
+{% endblock %}

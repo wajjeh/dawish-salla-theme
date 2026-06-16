@@ -1,0 +1,19 @@
+<section class="dawish-section dawish-promo-banners">
+  <div class="container dawish-promo-banners__grid">
+    {% if component.items and component.items|length %}
+      {% for item in component.items %}
+        <a class="dawish-promo-card" href="{{ item.url|default('/categories') }}">
+          {% if item.image %}<img src="{{ item.image }}" alt="{{ item.title }}">{% endif %}
+          <span>{{ item.badge|default('مختارات الدويش') }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+          <strong>{{ item.button|default('تسوق الآن') }}</strong>
+        </a>
+      {% endfor %}
+    {% else %}
+      <a class="dawish-promo-card" href="/search?q=أعشاب"><span>أعشاب</span><h3>خلطات طبيعية مختارة</h3><p>اختيارات مناسبة للاستخدام اليومي.</p><strong>استعرض الأعشاب</strong></a>
+      <a class="dawish-promo-card" href="/search?q=زيوت"><span>زيوت</span><h3>زيوت وعناية</h3><p>منتجات عناية بتصميم تسوق واضح وسريع.</p><strong>استعرض الزيوت</strong></a>
+      <a class="dawish-promo-card" href="/offers"><span>عروض</span><h3>عروض الدويش</h3><p>منتجات مختارة بأسعار مميزة.</p><strong>شاهد العروض</strong></a>
+    {% endif %}
+  </div>
+</section>
