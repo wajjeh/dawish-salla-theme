@@ -10,6 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="{{ theme.settings.get('dawish_primary_color', '#68744c') }}">
+  <meta name="description" content="{{ page.description|default(store.description|default(store.name))|striptags }}">
   <title>{% block title %}{{ page.title|default(store.name) }}{% endblock %}</title>
   {% if store.icon %}<link rel="icon" href="{{ store.icon }}">{% endif %}
   {% if theme.font and theme.font.url %}<link rel="stylesheet" href="{{ theme.font.url }}">{% endif %}
@@ -38,6 +39,8 @@
   {% if theme.settings.get('dawish_search_overlay_enabled', true) %}
     {% include 'partials/search-overlay.twig' %}
   {% endif %}
+
+  {% include 'partials/floating-actions.twig' %}
 
   {% hook 'body:end' %}
   <script>

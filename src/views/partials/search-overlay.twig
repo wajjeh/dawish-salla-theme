@@ -5,10 +5,10 @@
       <i class="sicon-cancel"></i>
     </button>
     <h2 id="dawish-search-title">وش تدور عليه؟</h2>
-    <p>ابحث مباشرة عن الأعشاب، الزيوت، القهوة، الشاي ومنتجات العناية.</p>
+    <p>{{ theme.settings.get('dawish_search_helper', 'ابحث مباشرة عن الأعشاب، الزيوت، القهوة، الشاي ومنتجات العناية.') }}</p>
     <form action="/search" method="get" class="dawish-search-form">
       <i class="sicon-search"></i>
-      <input id="dawish-search-input" type="search" name="q" placeholder="اكتب اسم المنتج أو القسم..." autocomplete="off">
+      <input id="dawish-search-input" type="search" name="q" placeholder="{{ theme.settings.get('dawish_search_placeholder', 'اكتب اسم المنتج أو القسم...') }}" autocomplete="off">
       <button type="submit">بحث</button>
     </form>
     <div class="dawish-search-tags" aria-label="اقتراحات البحث">

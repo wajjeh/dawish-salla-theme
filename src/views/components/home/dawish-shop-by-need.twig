@@ -1,0 +1,28 @@
+<section class="dawish-section dawish-shop-by-need">
+  <div class="container">
+    <div class="dawish-section__head dawish-section__head--center">
+      <div>
+        <span class="dawish-eyebrow">{{ component.badge|default('تسوق حسب احتياجك') }}</span>
+        <h2>{{ component.title|default('وش تحتاج اليوم؟') }}</h2>
+        {% if component.description %}<p>{{ component.description }}</p>{% endif %}
+      </div>
+    </div>
+
+    <div class="dawish-need-grid">
+      {% if component.items and component.items|length %}
+        {% for item in component.items %}
+          <a class="dawish-need-card" href="{{ item.url|default('/categories') }}">
+            <i class="{{ item.icon|default('sicon-leaf') }}"></i>
+            <strong>{{ item.title }}</strong>
+            <span>{{ item.text }}</span>
+          </a>
+        {% endfor %}
+      {% else %}
+        <a class="dawish-need-card" href="/search?q=الشعر"><i class="sicon-user"></i><strong>العناية بالشعر</strong><span>زيوت ومنتجات يومية</span></a>
+        <a class="dawish-need-card" href="/search?q=الجسم"><i class="sicon-heart"></i><strong>العناية بالجسم</strong><span>اختيارات طبيعية مرتبة</span></a>
+        <a class="dawish-need-card" href="/search?q=القهوة"><i class="sicon-coffee"></i><strong>جلسة قهوة</strong><span>قهوة وشاي ومستلزمات</span></a>
+        <a class="dawish-need-card" href="/offers"><i class="sicon-offer"></i><strong>عروض الدويش</strong><span>منتجات بسعر مميز</span></a>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="dawish-section dawish-cta">
+  <div class="container dawish-cta__box">
+    <div>
+      <span class="dawish-eyebrow">{{ component.badge|default('جاهز تطلب؟') }}</span>
+      <h2>{{ component.title|default('ابدأ من العروض أو الأقسام الأكثر طلبًا') }}</h2>
+      <p>{{ component.text|default('خلينا نسهل عليك الوصول للمنتج المناسب بسرعة.') }}</p>
+    </div>
+    <div class="dawish-cta__actions">
+      <a class="dawish-btn dawish-btn--primary" href="{{ component.primary_url|default('/offers') }}">{{ component.primary_label|default('شاهد العروض') }}</a>
+      <button class="dawish-btn dawish-btn--ghost" type="button" data-dawish-open-search>{{ component.secondary_label|default('ابحث الآن') }}</button>
+    </div>
+  </div>
+</section>

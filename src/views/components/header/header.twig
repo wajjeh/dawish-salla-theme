@@ -53,6 +53,15 @@
     </div>
   </div>
 
+  {% if theme.settings.get('dawish_header_chips_enabled', true) %}
+  <div class="container dawish-header-chips">
+    <a href="/offers"><i class="sicon-offer"></i> عروض اليوم</a>
+    <a href="/search?q=أعشاب"><i class="sicon-leaf"></i> الأعشاب</a>
+    <a href="/search?q=زيوت"><i class="sicon-drop"></i> الزيوت</a>
+    <a href="/search?q=قهوة"><i class="sicon-coffee"></i> القهوة</a>
+  </div>
+  {% endif %}
+
   {% if theme.settings.get('show_mobile_search', true) %}
   <div class="container dawish-mobile-search">
     <button type="button" data-dawish-open-search>

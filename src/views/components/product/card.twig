@@ -1,10 +1,16 @@
-{# Optional custom product card skeleton if you register custom-salla-product-card in your build. #}
+{# Dawish custom product card: conversion-ready and safe for launch. #}
 <article class="dawish-product-card" id="product-{{ product.id }}">
   <a href="{{ product.url }}" class="dawish-product-card__image">
     {% if product.is_on_sale %}<span class="dawish-badge">خصم</span>{% endif %}
-    <img src="{{ product.image.url|default(product.image) }}" alt="{{ product.name }}" loading="lazy">
+    <span class="dawish-product-card__quick" aria-label="عرض المنتج"><i class="sicon-eye"></i></span>
+    <img src="{{ product.image.url|default(product.image) }}" alt="{{ product.name }}" loading="lazy" decoding="async">
   </a>
   <div class="dawish-product-card__body">
+    <div class="dawish-product-card__meta">
+      {% if product.is_on_sale %}<span>عرض</span>{% endif %}
+      {% if product.quantity and product.quantity < 6 %}<span>كمية محدودة</span>{% endif %}
+      {% if product.rating %}<span>{{ product.rating }} ★</span>{% endif %}
+    </div>
     <a href="{{ product.url }}" class="dawish-product-card__title">{{ product.name }}</a>
     <div class="dawish-product-card__price">
       <strong>{{ product.price }}</strong>
@@ -13,5 +19,8 @@
     <salla-add-product-button product-id="{{ product.id }}" product-status="{{ product.status }}" fill="outline" width="wide">
       إضافة للسلة
     </salla-add-product-button>
+    {% if theme.settings.get('notify_when_available_in_card', true) %}
+      <salla-product-availability product-id="{{ product.id }}"></salla-product-availability>
+    {% endif %}
   </div>
 </article>

@@ -2,6 +2,43 @@
 {% block content %}
 <section class="container dawish-page dawish-cart-page">
   <h1>{{ page.title|default('السلة') }}</h1>
-  <salla-cart></salla-cart>
+
+  <div class="dawish-cart-layout">
+    <div>
+      <salla-cart></salla-cart>
+
+      {% if theme.settings.get('dawish_cart_upsell_enabled', true) %}
+      <section class="dawish-section dawish-product-cross-sell">
+        <div class="dawish-section__head">
+          <div>
+            <span class="dawish-eyebrow">أكمل طلبك</span>
+            <h2>منتجات قد تناسب طلبك</h2>
+            <p>اختيارات سريعة تساعد العميل يرفع قيمة السلة قبل إتمام الطلب.</p>
+          </div>
+        </div>
+        <salla-products-slider source="offers" limit="8" product-card-component="custom-salla-product-card"></salla-products-slider>
+      </section>
+      {% endif %}
+    </div>
+
+    <aside class="dawish-cart-aside">
+      <div class="dawish-cart-help">
+        <h3>تحتاج مساعدة؟</h3>
+        <p>تواصل معنا قبل إتمام الطلب إذا تحتاج استفسار عن منتج أو توصيل.</p>
+        {% set wa_number = theme.settings.get('dawish_whatsapp_number', '') %}
+        {% if wa_number %}<a href="https://wa.me/{{ wa_number }}" target="_blank" rel="noopener"><i class="sicon-whatsapp"></i> تواصل واتساب</a>{% endif %}
+      </div>
+
+      <div class="dawish-cart-trust">
+        <h3>طلبك معنا</h3>
+        <ul>
+          <li><i class="sicon-shield-check"></i> دفع آمن عبر سلة</li>
+          <li><i class="sicon-shipping-fast"></i> تجهيز وتوصيل مرتب</li>
+          <li><i class="sicon-box"></i> تغليف مناسب للمنتجات</li>
+          <li><i class="sicon-phone"></i> دعم عند الحاجة</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
 </section>
 {% endblock %}

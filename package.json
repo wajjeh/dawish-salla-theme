@@ -1,7 +1,7 @@
 {
   "name": "dawish-salla-theme",
-  "version": "1.0.0",
-  "description": "Custom Salla Twilight theme for Dawish herbal store.",
+  "version": "1.3.0",
+  "description": "Dawish Salla Theme Launch Plus with mobile product options polish.",
   "private": true,
   "scripts": {
     "preview": "salla theme preview",
