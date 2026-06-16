@@ -92,7 +92,6 @@
     <salla-products-slider source="related" source-value="{{ product.id }}" limit="8" product-card-component="custom-salla-product-card"></salla-products-slider>
   </section>
 </section>
-{% endblock %}
 
 {% if theme.settings.get('sticky_add_to_cart', true) %}
 <div class="dawish-sticky-buy-mobile">
@@ -104,3 +103,4 @@
   <salla-add-product-button product-id="{{ product.id }}" product-status="{{ product.status }}" fill="solid" width="wide">إضافة للسلة</salla-add-product-button>
 </div>
 {% endif %}
+{% endblock %}
