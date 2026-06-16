@@ -1,0 +1,46 @@
+{% extends "layouts.master" %}
+
+{% block content %}
+  {#
+    Launch fallback homepage.
+    This page renders immediately even before the merchant adds draggable homepage blocks
+    from Salla's theme editor. The custom components are still registered in twilight.json
+    and can be used later from the editor.
+  #}
+
+  {% include 'components/home/dawish-hero.twig' with {
+    component: {
+      title: store.name|default('عطارة الدويش'),
+      description: store.description|default('أعشاب، زيوت، قهوة ومنتجات عناية مختارة بعناية.'),
+      primary_url: '/categories',
+      secondary_url: '/offers'
+    }
+  } %}
+
+  {% include 'components/home/dawish-trust-strip.twig' with { component: {} } %}
+  {% include 'components/home/dawish-categories.twig' with { component: { title: 'الأقسام' } } %}
+  {% include 'components/home/dawish-shop-by-need.twig' with { component: {} } %}
+  {% include 'components/home/dawish-products.twig' with {
+    component: {
+      title: 'منتجات مختارة',
+      description: 'اختيارات مناسبة للطلب السريع من عطارة الدويش.',
+      source: 'offers',
+      limit: 8,
+      display_all_url: '/offers'
+    }
+  } %}
+  {% include 'components/home/dawish-bundles.twig' with { component: {} } %}
+  {% include 'components/home/dawish-promo-banners.twig' with { component: {} } %}
+  {% include 'components/home/dawish-story.twig' with { component: {} } %}
+  {% include 'components/home/dawish-features.twig' with {
+    component: {
+      items: [
+        { icon: 'sicon-leaf', title: 'منتجات مختارة', text: 'ترتيب واضح لأصناف العطارة والعناية' },
+        { icon: 'sicon-shipping-fast', title: 'توصيل سريع', text: 'تجربة شراء مختصرة ومناسبة للجوال' },
+        { icon: 'sicon-shield-check', title: 'دفع آمن', text: 'وسائل دفع موثوقة وتجربة طلب واضحة' }
+      ]
+    }
+  } %}
+  {% include 'components/home/dawish-testimonials.twig' with { component: {} } %}
+  {% include 'components/home/dawish-cta.twig' with { component: {} } %}
+{% endblock %}

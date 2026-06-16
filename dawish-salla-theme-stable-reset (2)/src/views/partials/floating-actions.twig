@@ -1,0 +1,17 @@
+{% set whatsapp_enabled = theme.settings.get('dawish_whatsapp_enabled', true) %}
+{% set whatsapp_number = theme.settings.get('dawish_whatsapp_number', store.contacts.whatsapp|default('')) %}
+{% set whatsapp_message = theme.settings.get('dawish_whatsapp_message', 'مرحبًا، أحتاج مساعدة في الطلب من عطارة الدويش') %}
+
+<div class="dawish-floating-actions" aria-label="إجراءات سريعة">
+  {% if whatsapp_enabled and whatsapp_number %}
+    <a class="dawish-floating-actions__btn dawish-floating-actions__btn--whatsapp" href="https://wa.me/{{ whatsapp_number }}?text={{ whatsapp_message|url_encode }}" target="_blank" rel="noopener" aria-label="تواصل واتساب">
+      <i class="sicon-whatsapp"></i>
+    </a>
+  {% endif %}
+
+  {% if theme.settings.get('dawish_back_to_top_enabled', true) %}
+    <button class="dawish-floating-actions__btn dawish-floating-actions__btn--top" type="button" data-dawish-scroll-top aria-label="الرجوع للأعلى">
+      <i class="sicon-keyboard_arrow_up"></i>
+    </button>
+  {% endif %}
+</div>
