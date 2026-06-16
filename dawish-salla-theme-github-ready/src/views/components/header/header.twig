@@ -1,0 +1,70 @@
+{# Header receives cart object from Twilight. #}
+<header class="dawish-header" id="dawish-header">
+  <div class="dawish-topbar">
+    <div class="container dawish-topbar__inner">
+      <span>{{ theme.settings.get('dawish_topbar_text', 'منتجات طبيعية مختارة بعناية — دفع آمن — توصيل سريع') }}</span>
+    </div>
+  </div>
+
+  <div class="container dawish-header__inner">
+    <div class="dawish-header__side dawish-header__side--start">
+      <button class="dawish-icon-button dawish-menu-toggle" type="button" data-dawish-menu-toggle aria-label="فتح القائمة">
+        <i class="sicon-menu"></i>
+      </button>
+      <nav class="dawish-desktop-nav" aria-label="روابط المتجر">
+        <a href="/">الرئيسية</a>
+        <a href="/categories">الأقسام</a>
+        <a href="/offers">العروض</a>
+        <a href="/latest-products">وصل حديثًا</a>
+      </nav>
+    </div>
+
+    <a class="dawish-logo" href="/" aria-label="{{ store.name }}">
+      {% if store.logo %}
+        <img src="{{ store.logo }}" alt="{{ store.name }}">
+      {% else %}
+        <strong>{{ store.name }}</strong>
+      {% endif %}
+    </a>
+
+    <div class="dawish-header__side dawish-header__side--end">
+      <button class="dawish-icon-button" type="button" data-dawish-open-search aria-label="بحث">
+        <i class="sicon-search"></i>
+      </button>
+
+      <a class="dawish-icon-button" href="/wishlist" aria-label="المفضلة">
+        <i class="sicon-heart"></i>
+      </a>
+
+      <div class="dawish-user-menu">
+        <salla-user-menu avatar-only="true"></salla-user-menu>
+      </div>
+
+      <div class="dawish-cart-summary">
+        <salla-cart-summary></salla-cart-summary>
+      </div>
+    </div>
+  </div>
+
+  <div class="container dawish-mobile-search">
+    <button type="button" data-dawish-open-search>
+      <i class="sicon-search"></i>
+      <span>ابحث عن أعشاب، زيوت، قهوة...</span>
+    </button>
+  </div>
+
+  <aside class="dawish-mobile-menu" id="dawish-mobile-menu" aria-hidden="true">
+    <button type="button" class="dawish-mobile-menu__close" data-dawish-menu-close aria-label="إغلاق القائمة"><i class="sicon-cancel"></i></button>
+    <a class="dawish-mobile-menu__logo" href="/">
+      {% if store.logo %}<img src="{{ store.logo }}" alt="{{ store.name }}">{% else %}<strong>{{ store.name }}</strong>{% endif %}
+    </a>
+    <nav>
+      <a href="/"><i class="sicon-home"></i> الرئيسية</a>
+      <a href="/categories"><i class="sicon-layout-grid-rearrange"></i> الأقسام</a>
+      <a href="/offers"><i class="sicon-offer"></i> العروض</a>
+      <a href="/latest-products"><i class="sicon-store2"></i> وصل حديثًا</a>
+      <a href="/wishlist"><i class="sicon-heart"></i> المفضلة</a>
+      <a href="/pages/contact-us"><i class="sicon-phone"></i> تواصل معنا</a>
+    </nav>
+  </aside>
+</header>
